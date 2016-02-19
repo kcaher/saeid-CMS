@@ -96,7 +96,7 @@ if(!isset($_GET['page']) && isset($_GET['id']) && is_numeric($_GET['id'])) {
 	 
 	 
 	 //start show comment
-	 $query="select * from comments order by id desc";
+	 $query="select * from comments where news_id=$id order by id desc";
 	 $result=mysqli_query($sql,$query);
 	 while($row=mysqli_fetch_array($result))
 		{
