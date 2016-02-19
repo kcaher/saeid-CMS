@@ -65,7 +65,7 @@ if	(    !empty($_POST['title']) 	 &&
 		 $fileEx = explode('.',$_FILES['pic']['name']);
 		 $fileEx = end($fileEx);
 		 $fileEx = strtolower($fileEx);
-		 $path='/saeid-CMS/admin/'. $name;
+		 $path=$_SERVER['PHP_SELF'].'/../'.$name;
 		 $path=str_replace('\'','',$path);
 		 $path=str_replace('\\','',$path);
 		 
