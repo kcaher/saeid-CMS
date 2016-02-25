@@ -72,7 +72,7 @@ if	(    !empty($_POST['title']) 	 &&
 			if(
 			 ($type   == "image/jpg"   	|| 
 			 $type   == "image/jpeg"	|| 
-			 $type   == "image/png"  	&& 
+			 $type   == "image/png")  	&& 
 			 ($fileEx == 'png' 		|| 
 			 $fileEx == 'jpg' 		|| 
 			 $fileEx == 'jpeg'
