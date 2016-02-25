@@ -26,8 +26,8 @@ $count = mysqli_num_rows($result);
 <ul id="nav">
 
 <li><a href="<?php echo dirname($_SERVER['PHP_SELF']);?>/../index.php							">Index</a></li>
-<li><a href="<?php echo dirname($_SERVER['PHP_SELF']);?>/../news.php?page=<?php echo $count;?>	">News</a></li>
-<li><a href="<?php echo dirname($_SERVER['PHP_SELF']);?>										">Admin</a></li>
+<li><a href="<?php echo dirname($_SERVER['PHP_SELF']);?>/../news.php?page=<?php echo $count;?>				">News</a></li>
+<li><a href="<?php echo dirname($_SERVER['PHP_SELF']);?>								">Admin</a></li>
 <li><a href="<?php echo dirname($_SERVER['PHP_SELF']);?>/../about.php							">About us</a></li>
 <li><a href="<?php echo dirname($_SERVER['PHP_SELF']);?>/../contact.php							">Contact</a></li>
 
@@ -65,14 +65,14 @@ if	(    !empty($_POST['title']) 	 &&
 		 $fileEx = explode('.',$_FILES['pic']['name']);
 		 $fileEx = end($fileEx);
 		 $fileEx = strtolower($fileEx);
-		 $path='/saeid-CMS/admin/'. $name;
+		 $path=$_SERVER['PHP_SELF'].'/../'.$name;
 		 $path=str_replace('\'','',$path);
 		 $path=str_replace('\\','',$path);
 		 
 			if(
-			 ($type   == "image/jpg"   || 
-			 $type   == "image/jpeg"  || 
-			 $type   == "image/png" ) && 
+			 ($type   == "image/jpg"   	|| 
+			 $type   == "image/jpeg"	|| 
+			 $type   == "image/png")  	&& 
 			 ($fileEx == 'png' 		|| 
 			 $fileEx == 'jpg' 		|| 
 			 $fileEx == 'jpeg'

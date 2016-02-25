@@ -20,15 +20,15 @@ $count = mysqli_num_rows($result);
 <center>
 <ul id="nav3">
 <form method=post action=search.php >
-<li><a href=index.php								>Index</a></li>
+<li><a href=index.php					>Index</a></li>
 <li><a href=news.php?page=<?php echo $count; ?> 	>News</a></li>
-<li><a href=admin									>Admin</a></li>
-<li><a href=login.php								>login</a></li>
-<li><a href=register.php							>register</a></li>
-<li><a href=about.php								>About us</a></li>
-<li><a href=contact.php								>Contact</a></li>
+<li><a href=admin					>Admin</a></li>
+<li><a href=login.php					>login</a></li>
+<li><a href=register.php				>register</a></li>
+<li><a href=about.php					>About us</a></li>
+<li><a href=contact.php					>Contact</a></li>
 
-<input type=submit  class=search 				>
+<input type=submit  class=search 			>
 <input type=text  	class=search name=word		>
 <input type=hidden 	class=search name=title		>
 <input type=hidden 	class=search name=content	>
@@ -96,7 +96,7 @@ if(!isset($_GET['page']) && isset($_GET['id']) && is_numeric($_GET['id'])) {
 	 
 	 
 	 //start show comment
-	 $query="select * from comments order by id desc";
+	 $query="select * from comments where news_id=$id order by id desc";
 	 $result=mysqli_query($sql,$query);
 	 while($row=mysqli_fetch_array($result))
 		{
